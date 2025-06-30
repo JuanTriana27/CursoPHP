@@ -8,19 +8,19 @@ try {
     die("Error de conexión: " . $e->getMessage());
 }
 
-// Operación de Eliminar
+// metodo de Eliminar
 if (isset($_GET['eliminar'])) {
     $id = filter_var($_GET['eliminar'], FILTER_VALIDATE_INT);
     if ($id !== false) {
         $stmt = $conection->prepare("DELETE FROM users WHERE id = :id");
-        $stmt->bindParam(':id', $id);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
-    }
-    header('Location: index.php');
+    } else
+        header('Location: index.php');
     exit;
 }
 
-// Operación de Actualizar
+// Metodo de Actualizar
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['actualizar'])) {
     $id = filter_var($_POST['id'], FILTER_VALIDATE_INT);
     $nombre = $_POST['nombre'];

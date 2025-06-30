@@ -87,9 +87,8 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                         <input type="hidden" name="id" id="id" value="">
                         <input type="hidden" name="actualizar" id="actualizar" value="">
-
-
                     </div>
+
                     <div class="modal-body">
                         <div class="mb-3">
                             <label for="nombre" class="form-label">Nombre</label>
@@ -111,17 +110,7 @@
                             <label for="mensaje" class="form-label">Mensaje</label>
                             <textarea class="form-control" id="mensaje" name="mensaje" rows="3"></textarea>
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label">Sexo</label><br>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="sexo" id="masculino" value="Masculino">
-                                <label class="form-check-label" for="masculino">Masculino</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="sexo" id="femenino" value="Femenino">
-                                <label class="form-check-label" for="femenino">Femenino</label>
-                            </div>
-                        </div>
+
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-primary">Guardar</button>
