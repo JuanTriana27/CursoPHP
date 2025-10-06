@@ -29,6 +29,13 @@
             <label for="texto">Descripción de la foto</label>
             <textarea name="texto" id="texto" placeholder="Ingresa una descripcion"></textarea>
 
+            <!-- Mostrar error -->
+            <?php if (!empty($error)): ?>
+                <div class="error">
+                    <?php echo $error; ?>
+                </div>
+            <?php endif; ?>
+
             <button type="submit">
                 <i class="fa fa-upload"></i> Subir Foto
             </button>

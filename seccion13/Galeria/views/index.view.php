@@ -20,34 +20,26 @@
 
     <section class="fotos">
         <div class="contenedor">
-            <div class="thumb">
-                <a href="#">
-                    <img src="images/1.png" alt="">
-                </a>
-            </div>
-
-            <div class="thumb">
-                <a href="#">
-                    <img src="images/2.png" alt="">
-                </a>
-            </div>
-
-            <div class="thumb">
-                <a href="#">
-                    <img src="images/3.png" alt="">
-                </a>
-            </div>
-
-            <div class="thumb">
-                <a href="#">
-                    <img src="images/4.png" alt="">
-                </a>
-            </div>
-        </div>
+           <?php
+           foreach ($fotos as $foto) { ?>
+               <div class="thumb">
+                   <a href="foto.php?id=<?php echo $foto['id_imagen']; ?>">
+                       <img src="images/<?php echo $foto['imagen']; ?>" alt="<?php echo $foto['titulo']; ?>">
+                   </a>
+               </div>
+           <?php } ?>
 
         <div class="paginacion">
-            <a href="#" class="izquierda"><i class="fa fa-angle-left"></i> Anterior</a>
-            <a href="#" class="derecha">Siguiente <i class="fa fa-angle-right"></i></a>
+            <!-- <a href="#" class="izquierda"><i class="fa fa-angle-left"></i> Anterior</a>
+            <a href="#" class="derecha">Siguiente <i class="fa fa-angle-right"></i></a> -->
+
+            <?php if ($pagina_actual > 1) { ?>
+                <a href="index.php?p=<?php echo $pagina_actual - 1; ?>" class="izquierda"><i class="fa fa-angle-left"></i> Anterior</a>     
+            <?php } ?>
+
+            <?php if ($pagina_actual < $total_paginas) { ?>
+                <a href="index.php?p=<?php echo $pagina_actual + 1; ?>" class="derecha">Siguiente <i class="fa fa-angle-right"></i></a>
+            <?php } ?>
         </div>
     </section>
 

@@ -14,14 +14,21 @@
 <body>
     <header>
         <div class="contenedor">
-            <h1 class="titulo">Foto: 1.jpg</h1>
+            <h1 class="titulo">
+                <?php if (!empty($foto)) {
+                    echo $foto['titulo'];
+                } else {
+                    echo $foto['imagen'];
+                } ?></h1>
         </div>
     </header>
 
     <div class="contenedor">
         <div class="foto">
-            <img src="images/1.png" alt="">
-            <p class="texto">Descripción de la imagen 1</p>
+            <?php if (!empty($foto)): ?>
+                <img src="images/<?php echo htmlspecialchars($foto['imagen']); ?>" alt="<?php echo htmlspecialchars($foto['titulo']); ?>">
+            <?php endif; ?>
+            <p class="texto"><?php echo htmlspecialchars($foto['texto']); ?></p>
             <a href="index.php" class="regresar"><i class="fa fa-arrow-left"></i> Ver más</a>
         </div>
     </div>
