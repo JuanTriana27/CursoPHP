@@ -218,8 +218,8 @@
         <?php endfor; ?>
 
         <!-- Bloquear boton de avance -->
-        <?php if (pagina_actual() === $numero_paginas): ?>
-            <li class="paginacion-item">
+        <?php if (pagina_actual() == $numero_paginas): ?>
+            <li class="paginacion-item active">
                 <span class="paginacion-disable paginacion-next">&raquo;</span>
             </li>
         <?php else: ?>

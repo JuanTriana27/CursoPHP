@@ -37,11 +37,10 @@ function obtenerPost($post_por_pagina, $conexion){
 
 // Funcion para obtener el numero de paginas
 function numero_paginas($post_por_pagina, $conexion){
-    $total_post = $conexion->prepare("SELECT FOUND_ROWS() as total"); // Consulta SQL para obtener el total de filas encontradas
-    $total_post->execute(); // Ejecuta la consulta
-    $total_post = $total_post->fetch()['total']; // Obtiene el total de filas
-    $numero_paginas = ceil($total_post / $post_por_pagina); // Calcula el numero de paginas redondeando hacia arriba
-    return $numero_paginas; // Devuelve el numero de paginas
+    $total_post = $conexion->prepare("SELECT COUNT(*) as total FROM articulos");
+    $total_post->execute();
+    $total_post = $total_post->fetch()['total'];
+    return ceil($total_post / $post_por_pagina);
 }
 
 // Funcion para obtener id del articulo

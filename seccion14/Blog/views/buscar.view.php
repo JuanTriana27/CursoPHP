@@ -1,6 +1,7 @@
 <?php require 'header.php'; ?>
 
 <div class="container">
+    <h2><?php echo $mensaje; ?></h2>
     <div class="posts-container">
         <?php foreach ($resultados as $articulo): ?>
             <div class="post">
