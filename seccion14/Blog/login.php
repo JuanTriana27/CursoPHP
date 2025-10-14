@@ -13,7 +13,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if($usuario == $blog_admin['usuario'] && $password == $blog_admin['password']) {
         $_SESSION['admin'] = $blog_admin['usuario'];
-        header('Location: ' . RUTA . 'admin');
+        header('Location: ' . RUTA . 'admin/index.php');
     } else {
         $error = 'Usuario o contraseña incorrectos';
     }

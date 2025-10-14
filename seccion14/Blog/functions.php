@@ -65,3 +65,10 @@ function fecha($fecha){
     $fecha = $dia . ' de ' . $meses[$mes - 1] . ' del ' . $year; // -1 porque los arrays empiezan en 0
     return $fecha;
 }
+
+// Funcion para proteger archivos con comprobacion de session
+function comprobarSession(){
+    if(!isset($_SESSION['admin'])){
+        header('Location: ' . RUTA);
+    }
+}
